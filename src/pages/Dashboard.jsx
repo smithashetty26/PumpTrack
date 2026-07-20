@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import "../styles/dashboard.css";
+import DashboardCards from "../components/DashboardCards";
+import SearchBar from "../components/SearchBar";
 import stations from "../data/stations";
+import "../styles/dashboard.css";
+import Card from "../components/Card";
 
 function Dashboard() {
-
   const [search, setSearch] = useState("");
-
 
   const filteredStations = stations.filter((station) =>
     station.name.toLowerCase().includes(search.toLowerCase())
@@ -19,37 +20,36 @@ function Dashboard() {
 
       <div className="dashboard">
 
-        <h1>Fuel Availability</h1>
+        <h1 className="title">⛽ Fuel Stations Network</h1>
 
-        <input
-          type="text"
-          className="search"
-          placeholder="Search Fuel Station..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
+        <DashboardCards />
+
+        <SearchBar
+          search={search}
+          setSearch={setSearch}
         />
 
-        {filteredStations.length > 0 ? (
-          filteredStations.map((station) => (
-            <div className="card" key={station.id}>
+        <div className="station-list">
 
-              <h2>{station.name}</h2>
+          {filteredStations.length > 0 ? (
+            filteredStations.map((station) => (
+              <div key={station.id}>
 
-              <p>⛽ Petrol : {station.petrol ? "Available" : "Not Available"}</p>
+  <Card station={station} />
 
-              <p>🚛 Diesel : {station.diesel ? "Available" : "Not Available"}</p>
+  <Link to={`/station/${station.id}`}>
+    <button className="details-btn">
+      View Details
+    </button>
+  </Link>
 
-              <p>🔥 CNG : {station.cng ? "Available" : "Not Available"}</p>
+</div>
+            ))
+          ) : (
+            <h2>No Fuel Station Found</h2>
+          )}
 
-             <Link to={`/station/${station.id}`}>
-             <button>View Details</button>
-             </Link>
-
-            </div>
-          ))
-        ) : (
-          <h3>No Fuel Station Found</h3>
-        )}
+        </div>
 
       </div>
     </>

@@ -1,23 +1,32 @@
 import { Link } from "react-router-dom";
+import { FaGasPump, FaMapMarkedAlt, FaUser, FaUserShield } from "react-icons/fa";
 import "../styles/navbar.css";
 
 function Navbar() {
   return (
     <nav className="navbar">
 
-      <h2>PumpTrack</h2>
+      <div className="logo">
+        ⛽ <span>PumpTrack</span>
+      </div>
 
-      <div>
+      <div className="nav-links">
 
-        <Link to="/">Home</Link>
+        <Link to="/dashboard">
+          <FaGasPump /> Dashboard
+        </Link>
 
-        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/map">
+          <FaMapMarkedAlt /> Map
+        </Link>
 
-        <Link to="/map">Map</Link>
+        <Link to="/profile">
+          <FaUser /> Profile
+        </Link>
 
-        <Link to="/profile">Profile</Link>
-
-        <Link to="/admin">Admin</Link>
+        <Link to="/admin">
+          <FaUserShield /> Admin
+        </Link>
 
       </div>
 

@@ -5,9 +5,9 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import Map from "./pages/Map";
-import NotFound from "./pages/NotFound";
-import StationDetails from "./pages/StationDetails";
 import Admin from "./pages/Admin";
+import StationDetails from "./pages/StationDetails";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -17,9 +17,9 @@ function App() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/map" element={<Map />} />
+      <Route path="/admin" element={<Admin />} />
       <Route path="/station/:id" element={<StationDetails />} />
       <Route path="*" element={<NotFound />} />
-      <Route path="/admin" element={<Admin />} />
     </Routes>
   );
 }
