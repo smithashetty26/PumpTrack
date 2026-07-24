@@ -1,38 +1,46 @@
-import stations from "../data/stations";
-
-function DashboardCards() {
-
+function DashboardCards({ stations }) {
   const total = stations.length;
 
-  const openNow = stations.filter(
-    station => station.open === "24 Hours"
+  const openStations = stations.filter(
+    (s) => s.status === "Open"
   ).length;
 
-  const limitedHours = stations.length - openNow;
+  const closedStations = stations.filter(
+    (s) => s.status === "Closed"
+  ).length;
 
   return (
+    <div className="cards">
 
-    <div className="dashboard-cards">
+      <div className="card total-card">
+        <div className="card-icon">🏢</div>
 
-      <div className="stat-card">
-        <h3>Total Stations</h3>
-        <h1>{total}</h1>
+        <div>
+          <h4>Total Stations</h4>
+          <h1>{total}</h1>
+        </div>
       </div>
 
-      <div className="stat-card">
-        <h3>Open 24 Hours</h3>
-        <h1>{openNow}</h1>
+      <div className="card open-card">
+        <div className="card-icon">🟢</div>
+
+        <div>
+          <h4>Open Stations</h4>
+          <h1>{openStations}</h1>
+        </div>
       </div>
 
-      <div className="stat-card">
-        <h3>Limited Hours</h3>
-        <h1>{limitedHours}</h1>
+      <div className="card closed-card">
+        <div className="card-icon">🔴</div>
+
+        <div>
+          <h4>Closed Stations</h4>
+          <h1>{closedStations}</h1>
+        </div>
       </div>
 
     </div>
-
   );
-
 }
 
 export default DashboardCards;

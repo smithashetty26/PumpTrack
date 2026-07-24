@@ -1,35 +1,101 @@
-import InputField from "../components/InputField";
-import Button from "../components/Button";
+import { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase/firebaseConfig";
+import { useNavigate, Link } from "react-router-dom";
 import "../styles/login.css";
+import { toast } from "react-toastify";
 
 function Login() {
+
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const login = async () => {
+
+   if (!email || !password) {
+  toast.warning("Please enter Email and Password");
+  return;
+    }
+
+    try {
+
+      setLoading(true);
+
+      await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      toast.success("Login Successful");
+      
+      navigate("/dashboard");
+      
+
+    } catch (err) {
+
+      toast.error(err.message);
+
+    }
+
+    setLoading(false);
+
+  };
+
   return (
+
     <div className="login-page">
 
-      <div className="login-box">
+      <div className="login-card">
 
-        <h1>PumpTrack</h1>
+        <h1>⛽ PumpTrack</h1>
 
-        <p>Real-Time Fuel Availability Tracker</p>
+        <p>Fuel Station Management System</p>
 
-        <InputField
+        <input
           type="email"
-          placeholder="Email"
+          placeholder="Enter Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
 
-        <InputField
-          type="password"
-          placeholder="Password"
+        <input
+          type={showPassword ? "text" : "password"}
+          placeholder="Enter Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
 
-        <Button text="Login" />
+        <label className="show-password">
+          <input
+            type="checkbox"
+            onChange={() => setShowPassword(!showPassword)}
+          />
+          Show Password
+        </label>
 
-        <h4>Create New Account</h4>
+        <button onClick={login}>
+          {loading ? "Logging in..." : "Login"}
+        </button>
+
+        <p className="register-text">
+          Don't have an account?
+
+          <Link to="/register">
+            Register
+          </Link>
+        </p>
 
       </div>
 
     </div>
+
   );
+
 }
 
 export default Login;

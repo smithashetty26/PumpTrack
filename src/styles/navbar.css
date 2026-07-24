@@ -1,37 +1,71 @@
 .navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 40px;
-    background:#5B3FD4;
-    color:white;
-    box-shadow:0 4px 12px rgba(0,0,0,.2);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 40px;
+background:#1e3a8a;
+color:white;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 3px 10px rgba(0,0,0,.2);
 }
 
 .logo{
-    font-size:28px;
-    font-weight:bold;
-}
-
-.logo span{
-    margin-left:8px;
+font-size:28px;
+font-weight:bold;
+letter-spacing:1px;
 }
 
 .nav-links{
-    display:flex;
-    gap:25px;
+display:flex;
+gap:25px;
+align-items:center;
 }
 
 .nav-links a{
-    color:white;
-    text-decoration:none;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    font-weight:500;
-    transition:.3s;
+color:white;
+text-decoration:none;
+font-size:17px;
+padding:8px 14px;
+border-radius:8px;
+transition:.3s;
 }
 
 .nav-links a:hover{
-    color:#FFD54F;
+background:white;
+color:#1e3a8a;
+}
+
+.active-link{
+background:white;
+color:#1e3a8a !important;
+font-weight:bold;
+}
+
+.nav-user{
+background:rgba(255,255,255,.15);
+padding:10px 18px;
+border-radius:30px;
+font-size:15px;
+font-weight:bold;
+}
+
+@media(max-width:900px){
+
+.navbar{
+flex-direction:column;
+gap:15px;
+padding:20px;
+}
+
+.nav-links{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.logo{
+font-size:24px;
+}
+
 }

@@ -1,33 +1,69 @@
-import { Link } from "react-router-dom";
-import { FaGasPump, FaMapMarkedAlt, FaUser, FaUserShield } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom";
+import { auth } from "../firebase/firebaseConfig";
 import "../styles/navbar.css";
 
 function Navbar() {
+  const location = useLocation();
+
+  const user = auth.currentUser;
+
   return (
     <nav className="navbar">
 
       <div className="logo">
-        ⛽ <span>PumpTrack</span>
+        ⛽ PumpTrack
       </div>
 
       <div className="nav-links">
 
-        <Link to="/dashboard">
-          <FaGasPump /> Dashboard
+        <Link
+          className={
+            location.pathname === "/dashboard"
+              ? "active-link"
+              : ""
+          }
+          to="/dashboard"
+        >
+          Dashboard
         </Link>
 
-        <Link to="/map">
-          <FaMapMarkedAlt /> Map
+        <Link
+          className={
+            location.pathname === "/map"
+              ? "active-link"
+              : ""
+          }
+          to="/map"
+        >
+          Map
         </Link>
 
-        <Link to="/profile">
-          <FaUser /> Profile
+        <Link
+          className={
+            location.pathname === "/profile"
+              ? "active-link"
+              : ""
+          }
+          to="/profile"
+        >
+          Profile
         </Link>
 
-        <Link to="/admin">
-          <FaUserShield /> Admin
+        <Link
+          className={
+            location.pathname === "/admin"
+              ? "active-link"
+              : ""
+          }
+          to="/admin"
+        >
+          Admin
         </Link>
 
+      </div>
+
+      <div className="nav-user">
+        👋 {user?.email?.split("@")[0]}
       </div>
 
     </nav>

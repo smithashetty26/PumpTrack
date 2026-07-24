@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Indian Oil",
+    "address": "MG Road, Pune",
+    "contact": "9876543210",
+    "open": "24 Hours",
+    "petrol": true,
+    "diesel": true,
+    "cng": false,
+    "lat": 18.5204,
+    "lng": 73.8567,
+    "mapLink": "https://maps.google.com/?q=18.5204,73.8567"
+  },
+  {
+    "name": "Bharat Petroleum",
+    "address": "Baner Road, Pune",
+    "contact": "9876543211",
+    "open": "24 Hours",
+    "petrol": true,
+    "diesel": true,
+    "cng": true,
+    "lat": 18.559,
+    "lng": 73.7868,
+    "mapLink": "https://maps.google.com/?q=18.559,73.7868"
+  },
+  {
+    "name": "HP Petrol Pump",
+    "address": "Andheri East, Mumbai",
+    "contact": "9876543212",
+    "open": "24 Hours",
+    "petrol": true,
+    "diesel": true,
+    "cng": false,
+    "lat": 19.1197,
+    "lng": 72.8468,
+    "mapLink": "https://maps.google.com/?q=19.1197,72.8468"
+  },
+  {
+    "name": "Reliance Petroleum",
+    "address": "Ghatkopar, Mumbai",
+    "contact": "9876543213",
+    "open": "24 Hours",
+    "petrol": true,
+    "diesel": true,
+    "cng": true,
+    "lat": 19.0856,
+    "lng": 72.9081,
+    "mapLink": "https://maps.google.com/?q=19.0856,72.9081"
+  },
+  {
+    "name": "Shell",
+    "address": "Brigade Road, Bengaluru",
+    "contact": "9876543214",
+    "open": "24 Hours",
+    "petrol": true,
+    "diesel": true,
+    "cng": false,
+    "lat": 12.9716,
+    "lng": 77.5946,
+    "mapLink": "https://maps.google.com/?q=12.9716,77.5946"
+  },
+  {
+    "name": "Indian Oil",
+    "address": "Whitefield, Bengaluru",
+    "contact": "9876543215",
+    "open": "24 Hours",
+    "petrol": true,
+    "diesel": true,
+    "cng": true,
+    "lat": 12.9698,
+    "lng": 77.75,
+    "mapLink": "https://maps.google.com/?q=12.9698,77.75"
+  },
+  {
+    "name": "HP Petrol Pump",
+    "address": "Banjara Hills, Hyderabad",
+    "contact": "9876543216",
+    "open": "24 Hours",
+    "petrol": true,
+    "diesel": true,
+    "cng": true,
+    "lat": 17.4126,
+    "lng": 78.4482,
+    "mapLink": "https://maps.google.com/?q=17.4126,78.4482"
+  },
+  {
+    "name": "Reliance Petroleum",
+    "address": "Madhapur, Hyderabad",
+    "contact": "9876543217",
+    "open": "24 Hours",
+    "petrol": true,
+    "diesel": true,
+    "cng": false,
+    "lat": 17.4483,
+    "lng": 78.3915,
+    "mapLink": "https://maps.google.com/?q=17.4483,78.3915"
+  },
+  {
+    "name": "Shell",
+    "address": "T Nagar, Chennai",
+    "contact": "9876543218",
+    "open": "24 Hours",
+    "petrol": true,
+    "diesel": true,
+    "cng": false,
+    "lat": 13.0418,
+    "lng": 80.2341,
+    "mapLink": "https://maps.google.com/?q=13.0418,80.2341"
+  },
+  {
+    "name": "Bharat Petroleum",
+    "address": "Anna Nagar, Chennai",
+    "contact": "9876543219",
+    "open": "24 Hours",
+    "petrol": true,
+    "diesel": true,
+    "cng": true,
+    "lat": 13.0843,
+    "lng": 80.2101,
+    "mapLink": "https://maps.google.com/?q=13.0843,80.2101"
+  }
+]

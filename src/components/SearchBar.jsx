@@ -1,13 +1,15 @@
 function SearchBar({ search, setSearch }) {
   return (
     <div className="search-container">
+
       <input
+        className="search-input"
         type="text"
-        className="search"
-        placeholder="🔍 Search Fuel Station..."
+        placeholder="🔍 Search by Name, Address or Contact..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
+
     </div>
   );
 }

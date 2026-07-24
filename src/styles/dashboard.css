@@ -1,159 +1,488 @@
+body{
+background:#f4f7fc;
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+/* ===========================
+   Dashboard
+=========================== */
+
 .dashboard{
-    width:90%;
-    margin:auto;
-    padding:20px;
-    font-family:Arial;
-}
-
-.dashboard h1{
-    color:#1565c0;
-    text-align:center;
-}
-
-.search{
-    width:100%;
-    padding:12px;
-    margin:20px 0;
-    border-radius:8px;
-    border:1px solid #ccc;
-    box-sizing:border-box;
-}
-
-.card{
-    background:white;
-    margin-bottom:20px;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,.1);
-}
-
-.card button{
-    background:#1565c0;
-    color:white;
-    border:none;
-    padding:10px 20px;
-    border-radius:6px;
-    cursor:pointer;
+padding:35px;
+max-width:1400px;
+margin:auto;
 }
 
 .title{
-    text-align:center;
-    font-size:32px;
-    margin-bottom:25px;
-    color:#4f46e5;
+text-align:center;
+font-size:38px;
+font-weight:bold;
+color:#0d47a1;
+margin-bottom:35px;
 }
 
-.dashboard-cards{
-    display:flex;
-    gap:20px;
-    margin-bottom:25px;
-    flex-wrap:wrap;
+/* ===========================
+   Dashboard Cards
+=========================== */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+margin-bottom:30px;
 }
 
-.stat-card{
-    flex:1;
-    min-width:220px;
-    background:#ffffff;
-    border-radius:12px;
-    padding:20px;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+.card{
+display:flex;
+align-items:center;
+gap:16px;
+padding:18px;
+border-radius:16px;
+color:#fff;
+box-shadow:0 8px 20px rgba(0,0,0,.12);
+transition:.3s;
+min-height:95px;
 }
 
-.stat-card h3{
-    color:#666;
-    margin-bottom:10px;
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 15px 30px rgba(0,0,0,.18);
 }
 
-.stat-card h1{
-    color:#4f46e5;
-    font-size:38px;
+.card-icon{
+font-size:34px;
+width:45px;
+text-align:center;
 }
+
+.card h4{
+margin:0;
+font-size:16px;
+font-weight:600;
+color:#fff;
+}
+
+.card h1{
+margin:6px 0 0;
+font-size:30px;
+font-weight:bold;
+color:#fff;
+}
+
+/* Card Colours */
+
+.total-card{
+background:linear-gradient(135deg,#1565c0,#42a5f5);
+}
+
+.petrol-card{
+background:linear-gradient(135deg,#2e7d32,#66bb6a);
+}
+
+.diesel-card{
+background:linear-gradient(135deg,#ef6c00,#ffb74d);
+}
+
+.cng-card{
+background:linear-gradient(135deg,#6a1b9a,#ab47bc);
+}
+
+.open-card{
+background:linear-gradient(135deg,#16a34a,#4ade80);
+}
+
+.closed-card{
+background:linear-gradient(135deg,#dc2626,#ef4444);
+}
+
+.low-card{
+background:linear-gradient(135deg,#0891b2,#22d3ee);
+}
+
+.medium-card{
+background:linear-gradient(135deg,#d97706,#fbbf24);
+}
+
+.high-card{
+background:linear-gradient(135deg,#991b1b,#ef4444);
+}
+
+/* ===========================
+   Search
+=========================== */
 
 .search-container{
-    margin:25px 0;
+margin-bottom:25px;
 }
 
-.details-btn{
-    background:#4f46e5;
-    color:white;
-    border:none;
-    padding:10px 18px;
-    border-radius:8px;
-    cursor:pointer;
-    margin-top:10px;
+.search-input{
+width:100%;
+padding:15px 18px;
+font-size:16px;
+border:2px solid #ddd;
+border-radius:12px;
+transition:.3s;
+box-sizing:border-box;
 }
 
-.details-btn:hover{
-    background:#3730a3;
+.search-input:focus{
+outline:none;
+border-color:#1976d2;
+box-shadow:0 0 10px rgba(25,118,210,.25);
+}
+
+/* ===========================
+   Station List
+=========================== */
+
+.station-list{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+gap:25px;
 }
 
 .station-card{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    margin-top:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-    transition:.3s;
+background:#fff;
+border-radius:18px;
+padding:22px;
+box-shadow:0 8px 20px rgba(0,0,0,.12);
+transition:.3s;
 }
 
 .station-card:hover{
-    transform:translateY(-5px);
+transform:translateY(-8px);
+box-shadow:0 18px 35px rgba(0,0,0,.18);
 }
 
-.fuel-status{
-    display:flex;
-    gap:10px;
-    margin:15px 0;
-    flex-wrap:wrap;
+.station-card h2,
+.station-card h3{
+margin-bottom:10px;
+color:#1565c0;
 }
 
-.available{
-    background:#22c55e;
-    color:white;
-    padding:6px 12px;
-    border-radius:20px;
-    font-size:14px;
+.station-card p{
+margin:8px 0;
+line-height:1.6;
 }
 
-.notavailable{
-    background:#ef4444;
-    color:white;
-    padding:6px 12px;
-    border-radius:20px;
-    font-size:14px;
-}
-
-.station-header{
+.station-top{
 display:flex;
 justify-content:space-between;
-align-items:center;
-margin-bottom:10px;
+align-items:flex-start;
+margin-bottom:15px;
 }
 
-.status{
-background:#22c55e;
-color:white;
-padding:6px 12px;
+.open-badge{
+background:#16a34a;
+color:#fff;
+padding:6px 14px;
 border-radius:20px;
 font-size:13px;
 font-weight:bold;
 }
 
-.address{
-color:#555;
-margin-bottom:15px;
+/* ===========================
+   Fuel Tags
+=========================== */
+
+.fuel-row{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin:18px 0;
 }
 
-.station-card{
-background:white;
-padding:22px;
-border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,.1);
+.fuel{
+padding:8px 14px;
+border-radius:20px;
+font-size:14px;
+font-weight:bold;
+}
+
+.yes{
+background:#d1fae5;
+color:#047857;
+}
+
+.no{
+background:#fee2e2;
+color:#dc2626;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.details-btn{
+background:#1976d2;
+color:white;
+border:none;
+padding:12px 22px;
+border-radius:10px;
+cursor:pointer;
+font-size:15px;
+font-weight:bold;
 transition:.3s;
+}
+
+.details-btn:hover{
+background:#0d47a1;
+}
+
+.delete-btn{
+background:#dc2626;
+color:white;
+border:none;
+padding:12px 22px;
+border-radius:10px;
+cursor:pointer;
+font-size:15px;
+font-weight:bold;
+transition:.3s;
+}
+
+.delete-btn:hover{
+background:#b91c1c;
+}
+
+/* ===========================
+   Admin Charts
+=========================== */
+
+.admin-chart-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+margin:40px 0;
+align-items:start;
+}
+
+.admin-chart-card{
+background:white;
+border-radius:18px;
+padding:22px;
+box-shadow:0 8px 20px rgba(0,0,0,.12);
+display:flex;
+flex-direction:column;
+align-items:center;
+transition:.3s;
+}
+
+.admin-chart-card:hover{
+transform:translateY(-5px);
+box-shadow:0 18px 35px rgba(0,0,0,.18);
+}
+
+.admin-chart-card h2{
+font-size:22px;
+color:#1565c0;
+margin-bottom:20px;
+text-align:center;
+}
+
+/* ===========================
+   Chart Wrappers
+=========================== */
+
+.pie-wrapper{
+width:230px;
+height:230px;
+position:relative;
+margin:auto;
+}
+
+.bar-wrapper{
+width:100%;
+height:280px;
+position:relative;
+}
+
+/* ===========================
+   Admin Form
+=========================== */
+
+.admin-form{
+background:#fff;
+padding:25px;
+border-radius:18px;
+box-shadow:0 8px 20px rgba(0,0,0,.12);
+margin:35px 0;
+}
+
+.admin-form h2{
+color:#1565c0;
 margin-bottom:20px;
 }
 
-.station-card:hover{
-transform:translateY(-6px);
+.admin-form input,
+.admin-form select,
+.admin-form textarea{
+width:100%;
+padding:12px 15px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:15px;
+box-sizing:border-box;
+transition:.3s;
+}
+
+.admin-form input:focus,
+.admin-form select:focus,
+.admin-form textarea:focus{
+outline:none;
+border-color:#1976d2;
+box-shadow:0 0 8px rgba(25,118,210,.20);
+}
+
+.admin-form button{
+background:#1976d2;
+color:white;
+border:none;
+padding:12px 22px;
+border-radius:10px;
+cursor:pointer;
+font-size:15px;
+font-weight:bold;
+transition:.3s;
+}
+
+.admin-form button:hover{
+background:#0d47a1;
+}
+
+/* ===========================
+   Export Button
+=========================== */
+
+.export-btn{
+background:#16a34a;
+color:white;
+border:none;
+padding:12px 24px;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+margin-bottom:25px;
+}
+
+.export-btn:hover{
+background:#15803d;
+}
+
+/* ===========================
+   Tables
+=========================== */
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+th{
+background:#1565c0;
+color:white;
+padding:14px;
+}
+
+td{
+padding:14px;
+border-bottom:1px solid #eee;
+text-align:center;
+}
+
+tr:hover{
+background:#f8fafc;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:992px){
+
+.admin-chart-grid{
+grid-template-columns:1fr;
+}
+
+.pie-wrapper{
+width:220px;
+height:220px;
+}
+
+.bar-wrapper{
+height:260px;
+}
+
+}
+
+@media(max-width:768px){
+
+.dashboard{
+padding:20px;
+}
+
+.title{
+font-size:30px;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.station-list{
+grid-template-columns:1fr;
+}
+
+.card{
+padding:18px;
+min-height:90px;
+}
+
+.card-icon{
+font-size:32px;
+width:40px;
+}
+
+.card h4{
+font-size:15px;
+}
+
+.card h1{
+font-size:28px;
+}
+
+.search-input{
+font-size:15px;
+}
+
+.admin-chart-card{
+padding:18px;
+}
+
+.admin-chart-card h2{
+font-size:18px;
+}
+
+.pie-wrapper{
+width:190px;
+height:190px;
+}
+
+.bar-wrapper{
+height:220px;
+}
+
+table{
+display:block;
+overflow-x:auto;
+white-space:nowrap;
+}
+
 }
